@@ -39,3 +39,9 @@ def get_post():
 def get_post(post_id):
     post = find_post(int(post_id))
     return {"message": post}
+
+
+@hrrapi.post("/posts")
+def create_post(post: Post):
+    print(post)
+    return {"new_post": post}
